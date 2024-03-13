@@ -1,0 +1,35 @@
+.header-container {
+	padding-top: 1rem;
+	padding-left: 1rem;
+	padding-bottom: 1rem;
+	background-color: #242424;
+	border: 1px solid #888888;
+	max-height: 10%;
+}
+
+.dashboard-header {
+	max-height: 40%;
+	border: none;
+	background: rgb(0, 0, 0);
+	background: linear-gradient(
+		1800deg,
+		rgba(0, 0, 0, 1) 0%,
+		rgba(36, 36, 36, 1) 42%,
+		rgba(146, 146, 146, 1) 100%
+	);
+}
+
+.profile-wrapper {
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	background-color: $secondary-bg-color;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.value-staked-card {
+	width: 90%;
+	height: 12.313rem;
+}

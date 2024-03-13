@@ -1,0 +1,54 @@
+.collections-wrapper{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    text-align: left;
+    width: 50%;
+    padding:0.75rem 1rem;
+    gap:1rem;
+    margin-top: 1rem;
+
+    .collections-heading{
+        display: flex;
+        justify-content: space-between;
+
+        .collections-title{
+            font-weight: 700;
+            font-size: 24px;
+
+        }
+        .elippsis{
+       font-weight: 700;
+            font-size: 24px;
+        }
+    }
+    .table-header{
+        font-weight: 700;
+        font-size: 16px;
+        font-family: 'Courier New';
+        padding: 0 0.75rem;
+    }
+    .table-data{
+        margin-top: 1rem;
+        border:2px solid #ffffff;
+        border-radius: 0.75rem;
+        max-height: 300px;
+        overflow-y:scroll;
+        img{
+            width: 50px;
+            height: 50px;
+        }
+        .table-row:last-of-type{
+            border-bottom: none;
+        }
+        .table-row{
+            :last-child{
+                border-right: none;
+            }
+            div{
+                padding: 0.25rem;
+                text-align: center;
+            }
+        }
+    }
+}
