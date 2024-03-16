@@ -122,6 +122,7 @@ export default function MainComponent() {
 			<Main open={showSideNav} className='main-component-height'>
 				<DrawerHeader />
 				<Routes>
+					<Route path='/*' element={<Dashboard />} />
 					<Route path='/' element={<Dashboard />} />
 					<Route
 						path='/yield-farming-a'

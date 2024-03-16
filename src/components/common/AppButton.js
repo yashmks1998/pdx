@@ -1,35 +1,35 @@
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 import * as React from 'react';
+import { getStyles } from '../../constants/style-constant';
 
 export default function AppButton(props) {
 	const { text, variant, endIcon, clickHandler, borderRadius, minWidth } =
 		props;
-        let bgColor,color,hoverBGColor,activeBGColor;
-        switch(variant){
-            case 'outlined':
-                bgColor='#161717';
-                color='#ffffff';
-                hoverBGColor='rgb(146, 146, 146, 0.3)';
-                activeBGColor='rgb(146, 146, 146, 0.3)';
-				break;
 
-            case 'primary':
-                bgColor='#ffffff';
-                color='#000000';
-                hoverBGColor='rgb(220 213 213)';
-                activeBGColor='rgb(220 213 213)';
-				break;
+	let bgColor, color, hoverBGColor, activeBGColor;
+	switch (variant) {
+		case 'outlined':
+			bgColor = '#161717';
+			color = '#ffffff';
+			hoverBGColor = 'rgb(146, 146, 146, 0.3)';
+			activeBGColor = 'rgb(146, 146, 146, 0.3)';
+			break;
 
-            default:
-                bgColor='#161717';
-                color='#ffffff';
-                hoverBGColor='rgb(217, 217, 217,0.3)'
-                activeBGColor='rgb(217, 217, 217,0.3)'
-				break;
+		case 'primary':
+			bgColor = '#ffffff';
+			color = '#000000';
+			hoverBGColor = 'rgb(220 213 213)';
+			activeBGColor = 'rgb(220 213 213)';
+			break;
 
-        }
-
+		default:
+			bgColor = '#161717';
+			color = '#ffffff';
+			hoverBGColor = 'rgb(217, 217, 217,0.3)';
+			activeBGColor = 'rgb(217, 217, 217,0.3)';
+			break;
+	}
 
 	const BootstrapButton = styled(Button)({
 		boxShadow: 'none',
@@ -43,21 +43,10 @@ export default function AppButton(props) {
 		borderRadius: borderRadius || 4,
 		minWidth: minWidth || '25.75rem',
 		minHeight: '2.75rem',
-		color:color,
+		color: color,
 		fontFamily: ['Courier Prime'].join(','),
-		'&:hover': {
-			backgroundColor: hoverBGColor,
-			borderColor: variant === 'outlined' ? '#ffffff' : '#161717',
-			boxShadow: 'none',
-		},
-		'&:active': {
-			boxShadow: 'none',
-			backgroundColor: activeBGColor,
-			borderColor: variant === 'outlined' ? '#ffffff' : '#161717',
-		},
-		'&:focus': {
-			boxShadow: '0 0 0 0.2rem rgba(146, 146, 146, .5)',
-		},
+		zIndex: 0,
+		...getStyles(borderRadius, activeBGColor, hoverBGColor, bgColor),
 	});
 
 	return (

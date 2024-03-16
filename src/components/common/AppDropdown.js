@@ -3,6 +3,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import React from 'react';
+import { getStyles } from '../../constants/style-constant';
 
 export default function AppDropdown(props) {
 	const { items, id, labelId, value, label, handleChange, variant, type } =
@@ -17,24 +18,6 @@ export default function AppDropdown(props) {
 				value={value}
 				label={label}
 				onChange={handleChange}
-				// inputProps={
-				// 	type === 'secondary' && {
-				// 		MenuProps: {
-				// 			MenuListProps: {
-				// 				sx: {
-				// 					backgroundColor: '#D9D9D9',
-				// 					color: '#161717',
-				// 					'&:focus': {
-				// 						color: '#161717',
-				// 					},
-				// 					'&:hover': {
-				// 						color: '#161717',
-				// 					},
-				// 				},
-				// 			},
-				// 		},
-				// 	}
-				// }
 				sx={
 					type === 'secondary'
 						? {
@@ -44,9 +27,22 @@ export default function AppDropdown(props) {
 								'.MuiSelect-icon': {
 									color: '#161717',
 								},
+								...getStyles(
+									'4px',
+									'#D9D9D9',
+									'#D9D9D9',
+									'#D9D9D9'
+								),
 						  }
 						: {
 								backgroundColor: '#3E3F47',
+								'&:focus': { outline: 'none' },
+								...getStyles(
+									'4px',
+									'#3E3F47',
+									'#3E3F47',
+									'#3E3F47'
+								),
 						  }
 				}>
 				{items.map((item) => (
